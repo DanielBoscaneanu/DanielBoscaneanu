@@ -1,0 +1,1491 @@
+//Să se realizeze un program C care afiseaza mesajul:  Bine ai venit!
+#include <stdio.h>
+int main(){
+   printf("Bine ai venit!");
+   return 0;
+}
+
+//Scrieţi un program care citeşte două numere intregi de la tastatură şi afişează suma lor.
+#include <stdio.h>
+int main(){
+  int nr1, nr2,suma;
+  scanf("%d%d", &nr1,&nr2);
+  suma = nr1 + nr2;
+  printf("Suma este %d.", suma);
+  return 0;
+}
+
+//Scrieți un program care citește un număr întreg de la tastatură și verifică dacă este par.
+#include <stdio.h>
+int main() {
+    int n;
+    scanf("%i", &n);
+    if (n % 2 != 0) {
+        printf("Numarul %i este impar.", n);
+    } else {
+        printf("Numarul %i este par.", n);
+    }
+    return 0;
+}
+
+//Să se scrie un program care, fiind date două numere întregi a și b, verifica dacă unul dintre ele este egal cu 10 sau dacă suma lor este 10 si afiseaza un mesaj corespunzator pe ecran. 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int a, b;
+    scanf("%i%i",&a,&b);
+    if (a + b == 10 || a == 10 || b == 10) {
+        printf("Un numar sau suma lor este 10"); }
+    else {
+        printf("Numerele si suma lor nu sunt 10");
+        }
+}
+
+//Scrieti un program care să afișeze de trei ori mesajul "Tu esti cel mai bun programator!" pe 3 rânduri diferite.
+#include <stdio.h>
+int main() {
+    printf("Tu esti cel mai bun programator!\nTu esti cel mai bun programator!\nTu esti cel mai bun programator!");
+    return 0;
+}
+
+//Scrieti un program C care citeste trei numere intregi si afiseaza suma lor.
+#include <stdio.h>
+int main() {
+    int a , b, c,suma;
+    scanf("%i%i%i", &a,&b,&c);
+    suma = a + b + c;
+    printf("%i+%i+%i=%i", a, b, c, suma);
+    return 0;
+}
+
+//Scrieti un program C care citeste trei numere reale si afiseaza suma lor.
+#include <stdio.h>
+int main() {
+    float a, b, c, suma;
+    scanf("%f%f%f", &a,&b,&c);
+    suma = a + b + c;
+    printf("%f+%f+%f=%f",a , b, c, suma);
+    return 0;
+}
+
+//Scrieti un program care citeste de la tastatura valori pentru doua variabile intregi x si y si apoi le interschimba si afiseaza noile valori ale variabilelor.
+#include <stdio.h>
+int main() {
+    int x, y, t;
+    scanf("%i%i", &x,&y);
+    t = x;
+    x = y;
+    y = t;
+    printf("Dupa interschimbare, a este %i si b este %i", x, y);
+    return 0;
+}
+
+//Scrieti un program care transformă o temperatură citită de la tastatură (numar intreg) din grade Celsius in grade Farenheit.
+#include <stdio.h>
+int main() {
+    int c, f;
+    scanf("%i", &c);
+    f = 32+9*c/5;
+    printf("%i grade C = %i grade Farenheit", c, f);
+}
+
+//Scrieti un program care citeste de la tastatura un numar real de ani si afiseaza numarul de luni, zile si ore corespunzatoare.
+#include <stdio.h>
+int main() {
+    float a , l ,z, o;
+    scanf("%f", &a);
+    l = 12*a;
+    z = 365*a;
+    o = 8760*a;
+    printf("%f ani inseamna %f luni\n%f ani inseamna %f zile\n%f ani inseamna %f ore", a, l , a, z, a, o);
+}
+
+//Scrieti un program care citeste de la tastatura un numar natural format din cel mult 8 cifre. Programul afiseaza toate numerele obtinute prin transformarea cifrei celei mai nesemnificative in cifra cea mai semnificativa. 
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n, i,j=0;
+    scanf("%i", &n);
+    int n2 = n;
+    
+    while(n2 != 0) {
+        n2 = n2 / 10;
+        j++;
+    }
+    
+    for(i=1;i<=j;i++){
+        n=(n%10)*pow(10,j-1)+n/10;
+        printf("%i\n", n);
+    }
+    printf("STOP\n");
+    return 0;
+}
+
+//Scrieti un program care reprezinta un calculator de buzunar, adica citeste doua numere (reale) si semnul unei operatii (+, -, *, /) si afiseaza rezultatul operatiei respective.
+#include <stdio.h>
+
+int main() {
+    float a,b;
+    char h;
+    scanf("%f%c%f", &a,&h,&b);
+    if(h == '+')
+        printf("Rezultatul este %f\n", a+b);
+    if(h == '-')
+        printf("Rezultatul este %f\n", a-b);
+    if(h == '*')
+        printf("Rezultatul este %f\n", a*b);
+    if(h == '/')
+        printf("Rezultatul este %f\n", a/b);
+    return 0;
+}
+
+//Pentru un numar intreg introdus de la tastatura determinati valoarea absoluta a acestuia.
+#include <stdio.h>
+int main() {
+    int n, n2;
+    scanf("%i", &n);
+    if(n >= 0) {
+        printf("Numarul introdus este pozitiv");
+    }
+    else if(n < 0) {
+        n2 = n * -1 ;
+        printf("Absolutul numarului %i este %i", n, n2);
+    }   
+}
+
+//Pentru un numar intreg introdus de la tastatura determinati daca acesta este par, impar sau 0.
+#include <stdio.h>
+int main() {
+    int n;
+    scanf("%i", &n);
+    if (n != 0 && n % 2 == 0) {
+        printf("Numarul %i este par.", n);
+    }
+    else if(n == 0) {
+        printf("Numarul este %i.", n);
+    }
+    else {
+        printf("Numarul %i este impar.", n);
+    }
+}
+
+//Pentru un numar intreg pozitiv introdus de la tastatura verificati daca acesta este divizibil cu 3.
+#include <stdio.h>
+int main() {
+    int n;
+    scanf("%i", &n);
+    if(n % 3 == 0) {
+        printf("Numarul %i este divizibil cu 3", n);
+    }
+    else {
+        printf("Numarul %i nu este divizibil cu 3", n);
+    }
+}
+
+//Pentru doua  numare intregi pozitive introduse de la tastatura, a si d, verificati daca d este divizor pentru a.
+#include <stdio.h>
+int main() {
+    int a, d;
+    scanf("%i%i", &a, &d);
+    if (d == 0) {
+        printf("Operatie imposibila");
+    }
+    else if (a == 0) {
+        printf("Numarul trebuie sa fie diferit de 0");
+    }
+    else {
+        if(a % d == 0) {
+            printf("%i este divizibil cu %i", a, d);
+        }
+        else if(d % a != 0) {
+            printf("%i nu este divizor pentru %i", d, a);
+        }
+    }
+}
+
+//Scrieti un program care citeste de la tastatura un numar intreg n si verifica daca este par.
+#include <stdio.h>
+int main() {
+    int n;
+    scanf("%i", &n);
+    if (n % 2 == 0) {
+        printf("%i este par", n);
+    }
+    else {
+        printf("%i este impar", n);
+    }
+}
+
+//Folosind instrucţiunea if, scrieţi un program care citeşte un număr intre 1 si 7 şi afişează ziua din săptămână corespunzătoare.
+#include <stdio.h>
+int main()
+{
+    int n;
+    scanf("%i", &n);
+    if (n==1) {
+        printf("Luni"); }
+    else if (n == 2) {
+        printf("Marti"); }
+    else if (n == 3) {
+        printf("Miercuri"); }
+    else if (n == 4) {
+        printf("Joi"); }
+    else if (n == 5) {
+        printf("Vineri"); }
+    else if (n == 6) {
+        printf("Sambata"); }
+    else if (n == 7) {
+        printf("Duminica"); }   
+    return 0;
+}
+
+//In Codul Numeric Personal, prima cifra ofera informatii generale despre sexul si originea persoanei respective, astfel
+
+cifrele 1,3,5 sunt cetateni romani de sex masculin 
+cifrele 2,4,6 sunt cetateni romani de sex feminin
+cifrele 7 sunt cetateni straini de sex masculin 
+cifrele 8 sunt cetateni straini de sex feminin
+Folosind instrucţiunea if sau  switch, scrieţi un program care citeşte un număr intreg şi afişează sexul si originea persoanei, sau mesajul "Valoare invalida" pentru alte numere.
+#include <stdio.h>
+int main() {
+    int n;
+    scanf("%i", &n);
+    switch(n) {
+        case 1:case 3:case 5: printf("Cetatean roman de sex masculin");
+        break;
+        case 2:case 4: case 6: printf("Cetatean roman de sex feminin");
+        break;
+        case 7: printf("Cetatean strain de sex masculin");
+        break;
+        case 8: printf("Cetatean strain de sex feminin");
+        break;
+        case 9: printf("Valoare invalida");
+        break;
+    }
+}
+
+//Folosind instructiuni repetitive, afisati toate numerele naturale pare de la 1 la n separate prin spatii, pentru n citit de la tastatura.
+#include <stdio.h>
+int main() {
+    int n, i;
+    scanf("%i", &n);
+    
+    for (i = 1; i <=n; i++) {
+        if (i % 2 == 0) {
+        printf("%i ",i); 
+        }
+    }
+}
+
+//Sa se afiseze toate numerele naturale de doua cifre care au cifra zecilor cuprinsa intre a si b, iar cifra unitatilor mai mica sau egala cu un c (a, b, c - numere citite de la tastatura).
+#include <stdio.h>
+int main() {
+    int a, b, c, i;
+    scanf("%i", &a);
+    scanf("%i", &b);
+    scanf("%i", &c);
+    
+    for(i = a*10; i <= b*10+c; i++) {
+        if(i%10 <=c)
+            printf("%i ",i);
+        if(i%10 ==c)
+            printf("\n");
+    }
+    return 0;
+}
+
+//Să se scrie un program care citeste două numere reale pozitive, calculează și afișează media lor aritmetică, geometrica si armonica.
+#include <stdio.h>
+#include <math.h>
+int main() {
+    float a, b, aritm, armon, geometr;
+    scanf("%f%f", &a, &b);
+    aritm = (a + b) / 2;
+    armon = (2*a*b)/(a+b);
+    geometr= sqrt(a*b);
+    printf("Media aritmetica este %f\n", aritm);
+    printf("Media geometrica este %f\n", geometr);
+    printf("Media armonica este %f", armon);
+    return 0;
+}
+
+//Scrieţi un program determină soluţia unei ecuaţii de gradul 1 cu coeficienţi reali, de forma ax+b = 0. Coeficienţii a si b vor fi citiţi de la tastatură. Tratati situatiile deosebite ce pot aparea. 
+#include <stdio.h>
+#include <math.h>
+int main() {
+    float a, b, x;
+    scanf("%f%f", &a, &b);
+    if(a != 0 && b != 0) {
+        x = -b/a;
+        printf("Solutia unica este %f\n", x);
+    }
+    if(a == 0 && b != 0) {
+        printf("Nu exista solutii.\n");
+    }
+    if(a == 0 && b == 0) {
+        printf("Orice numar este solutie.\n");
+    }
+    return 0;
+}
+
+//Scrieti un program care pentru trei numere naturale citite de la tastatura determină dacă pot fi laturile unui triunghi şi daca acesta este dreptunghic.
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int a, b, c;
+    scanf("%i%i%i", &a, &b, &c);
+        if(pow(a,2)+pow(b,2)==pow(c,2)) {
+                    printf("Numerele pot sa formeze un triunghi dreptunghi.");
+        }
+        else if(a < b+c && b < a+c && c < a+b) {
+            printf("Numerele pot sa formeze un triunghi oarecare.");
+        }
+        else
+            printf("Numerele nu pot sa formeze un triunghi."); 
+}
+
+//Scrieti un program care, pentru un numar intreg citit de la tastatura, calculeaza cifra maxima a acestuia. 
+#include <stdio.h>
+ int main() {
+    int n, i,j = 0;
+    scanf("%i", &n);
+    if(n < 0) n = n*-1;
+    while(n!=0) {
+        i = n % 10;
+        if(i >= j) j = i;
+    n = n/10;
+    }
+     printf("Cea mai mare cifra este %i", j);   
+ }
+
+//Calculati rasturnatul (sau oglinditul) unui numar natural n citit de la tastatura.
+#include <stdio.h>
+
+int main() {
+    int n, n2, n1;
+    scanf("%i", &n);
+    n1 = n;
+    n2 = 0;
+    while(n != 0){ n2 = n2*10 + n%10;
+        n = n / 10;   
+    }
+    printf("Rasturnatul lui %i este %i", n1, n2);
+}
+
+//Sa se scrie un program care citeste un nr intreg si numara din cate cifre este format acest numar. 
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    scanf("%i", &n);
+    i = 0;
+    if(n == 0) printf("Numarul are 1 cifre");
+    else {
+        while(n != 0) {
+            if(n%10 != 0) i++;
+        n = n/ 10;
+        }
+    printf("Numarul are %i cifre",i);
+    }
+}
+
+//Scrieti un program C care calculeaza suma S = 1 + 2 + ... + n, pentru un numar natural n citit de la tastatura, Folositi instructiunea for.
+#include <stdio.h>
+int main()
+{
+    int n,s=0,i;
+    scanf("%i", &n);
+    for(i=0; i<=n; i++) // INLOCUITI ... CU VALORILE CORECTE
+        s=s+i;
+    printf("Suma este %i", s);
+    return 0;
+}
+
+//Scrieti un program care calculeaza valoarea n!, pentru n numar natural, citit de la tastatura.
+#include <stdio.h>
+int main() {
+    int n,i, p=1;
+    scanf("%i", &n);
+    for(i = 1; i<=n; i++) {
+        p = p * i;
+    }
+    printf("Factorialul lui %i este %i.", n, p);
+    return 0;
+}
+
+//Scrieti un program C care calculeaza valoarea sumei S = 1 - 2 + 3 - ... ± n, pentru un n citit de la tastatura.
+#include<stdio.h>
+int main()
+{
+    int n, i, s=0;
+    scanf("%i", &n);
+    for(i=0;i<=n;++i) {
+        if(i % 2 == 1) {
+            s=s+i;
+        } else {
+            s=s-i;
+        }
+    }
+    printf("Rezultatul este %i", s);
+    return 0;
+}
+
+//Scrieți un program care citește numere naturale până la întalnirea lui zero și numără câte dintre numerele citite sunt pare.
+#include<stdio.h>
+int main()
+{
+    int i, n=0;
+    scanf("%i", &i);
+    while(i!=0) {
+        if (i % 2 == 0) // LA ... VERIFICA DACA i ESTE PAR
+            n=n+1;
+        scanf("%i", &i);
+    }
+    printf("Am gasit %i numere pare", n);
+    return 0;
+}
+
+//Scrieti un program care citeste un numar intreg de la tastatura si verifica daca acesta este prim sau nu.
+#include <stdio.h>
+int main() {
+    int n;
+    scanf("%i", &n);
+    if(n % 2 == 0)
+        printf("Numarul este compus.");
+    else
+        printf("Numarul este prim.");    
+}
+
+//Scrieti un program care calculeaza suma divizorilor unui numar natural n.
+#include <stdio.h>
+int main() {
+    int n, i, s;
+    scanf("%i", &n);
+    s = 0;
+    for(i = 1; i <= n; i++) {
+        if(n % i == 0) 
+            s = s+ i;
+    }
+    printf("Suma divizorilor lui %i este %i.", n , s);
+    return 0;
+}
+
+//Scrieți un program care calculează produsul a n numere naturale, citite de la tastatura.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n, i, nr, p;
+    scanf("%i", &n);
+    p = 1;
+    for(i = n; i > 0; i--) {
+        scanf("%i", &nr);
+        p = nr * p;
+    }
+    printf("Rezultatul este %i",p);
+}
+
+//Scrieți un program care afișează toate puterile mai mici decât p ale unui numar natural n dat (p și n citite de la utilizator).
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int p, n, i;
+    scanf("%i%i",&p,&n);
+    i = 0;
+    do {
+        printf("%i la puterea %i este %.0lf\n",n,i, pow(n,i));
+        i += 1;
+    }while(pow(n,i)<p);
+}
+
+//Scrieti un program care afiseaza toti divizorii naturali proprii ai unui numar natural n citit de la tastatura. Programul afiseaza la sfarsit pe cel mai mare si cel mai mic divizor propriu.
+#include <stdio.h>
+int main() {
+    int n, max, min, i,j = 0,div = 0,a;
+    scanf("%i",&n);
+    min = -1;
+    max = -1;
+    for (i=2;i<n;i++){
+        if(n%i==0) {a=i;break;} ;
+        
+    }
+    for(i = 2;i<n;i++) {
+    if(min == -1 && max == -1) {
+        min = n;
+        max = i;
+
+    }
+    if(n % i == 0) { printf("%i este divizor al lui %i\n", i, n);
+        j=i;
+        div++; }
+        
+    }
+    if(div == 0) printf("Numarul nu are divizori proprii (este prim)\n");
+    else
+        printf("Cel mai mic este %i si cel mai mare este %i\n", a, j);
+}
+
+//Scrieți un program care calculează numărul de cifre divizibile cu 3 din care este format numărul natural n, citit de la tastatură.
+#include <stdio.h>
+int main() {
+    int n,i,j=0;
+    scanf("%i",&n);
+    while(n != 0) { i = n%10;
+        if(i % 3 == 0) j++;
+        n=n/10;
+    }
+    printf("Numarul contine %i cifre divizibile cu 3.",j);
+}
+
+//Scrieti un program care citeste de la tastatura numere naturale pana la intalnirea lui 0. Determinati care dintre numerele citite sunt perfecte. Un numar este perfect daca este egal cu suma divizorilor sai pozitivi mai mici decat el.
+#include <stdio.h>
+int main() {
+    int n, i, s=0;
+    do {
+        scanf("%i",&n);
+        if(n == 0) break;
+        s=0;
+        for(i = 1; i<n; i++) {
+            if(n%i == 0)  
+                 s = s+i; 
+         }
+         if(s == n)  printf("%i este numar perfect\n", s);       
+  }while(n != 0);
+}
+
+//Calculaţi cifra de control a unui număr întreg efectuând suma cifrelor sale, apoi suma cifrelor acestei sume etc. Până se obţine o sumă formată dintr-o singură cifră.
+#include <stdio.h>
+
+int main() {
+    int n, i,suma = 0;
+    scanf("%i",&n);
+    while(n != 0) {
+        i = n % 10;
+        n = n / 10;
+        suma = suma + i;
+    }
+    suma=suma%10+suma/10;
+    printf("Cifra de control este %i", suma);
+}
+
+//Pentru o bază de numerație b dată, o cifra d și un număr n, să se calculeze de câte ori apare cifra d în exprimarea numarului n, scris în baza b.
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int b, n, d, i = 0, nr,k=0;
+    scanf("%i%i%i",&b,&n,&d);
+    nr = n;
+    while(n != 0) {
+        i = n%b;
+        if(i == d) k++;
+    n=n/b;
+    }
+    if(k>0) printf("Numarul %i are %i cifre de %i, scris in baza %i.",nr,k,d,b);
+    else
+        printf("Cifra %i nu este folosita la scrierea in baza %i.", d, b);
+}
+
+//Scrieti un program care citeste o secventa de numere naturale (pana la aparitia numarului 0) si calculeaza cel mai mare divizor comun al lor.
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int x;
+    scanf("%i",&x);
+    int cmmdc = x;
+    while(x!=0) {
+        scanf("%i",&x);
+        int r = x%cmmdc;
+        while(r!=0) {
+            x = cmmdc;
+            cmmdc = r;
+            r = x % cmmdc;
+        }
+    }
+    printf("Cmmdc al numerelor introduse este %i",cmmdc);
+}
+
+//Scrieti un program care afiseaza tabla inmultirii pana la un numar n (citit de la tastatura).
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n,i,j,a;
+    
+    scanf("%d",&n);
+    
+    for(i = 0; i<=n; i++) { 
+        for(j = 0; j<=n; j++) { 
+            a = i*j;
+        printf("%dx%d=%d  ",i,j,a);
+        } 
+        printf("\n");
+    }
+}  
+
+//Scrieti un program care afiseaza primii n termeni din seria numerelor lui Fibonacci.
+#include <stdio.h>
+int main() {
+    int n1,n2,i,temp,limit;
+    scanf("%i",&limit);
+    n1=0;
+    temp=0;
+    n2=1;
+    for(i=0;i<=limit;i++) {
+    if(n1 != 0) printf("%i ",n1);
+    temp = n1+n2;
+    n1=n2;
+    n2=temp;
+    }
+}
+
+//Scrieti un program care verifica daca un numar este palindrom sau nu.
+#include <stdio.h>
+int main() {
+    int nr,nr2,c=0;
+    scanf("%i",&nr);
+    int rest;
+    nr2=nr;
+    while(nr>0) {
+        rest = nr % 10;
+        c = rest+(c*10);
+        nr/=10;
+    }
+    if(nr2 == c)
+            printf("%i este palindrom.",nr2); 
+    else printf("%i nu este palindrom",nr2);
+}
+
+//Scrieti un program care afiseaza numerele puternice mai mici decat sau egale cu N (N citit de la tastatura, de maxim 8 cifre!scanf).
+
+Indicatie. Un numar se numeste "numar puternic" daca suma factorialelor cifrelor sale este egala cu numarul insusi. 
+
+Ex: 145 este numar puternic (strong number), pentru ca
+
+1! +4! +5!= 1+24+120 = 145
+
+#include <stdio.h>
+int main() {
+    int n,temp,rest,v[10],i=0;
+    scanf("%i",&n);
+    temp = n;
+    while(temp!=0) {
+        rest=temp%10;
+        temp/=10;
+        v[i]=rest;
+        i++;
+    }
+ //   n = rest;
+    int produs = 1;
+    int suma = 0;
+    for(int j = 0;j<i;j++) {
+        for(int z = 1;z<=v[j];z++) {
+            produs = produs*z;
+        }
+        suma = suma+produs;
+        produs=1;
+    }
+    if(suma == n) printf("%i este numar puternic",n);
+    else printf("%i nu este numar puternic",n);
+}
+
+//Scrieţi un program care citeşte de la tastatură doi vectori de numere (de aceeaşi dimensiune) şi calculează suma lor, termen cu termen, într-un al treilea vector. Programul afişează rezultatul obţinut.
+#include <stdio.h>
+int main() {
+    int n,i,j,q,sum = 0;
+    int a[100],b[100],c[100];
+    scanf("%i",&n);
+    for(i = 0; i<n;i++) { scanf("%i",&a[i]); }
+    for(j = 0; j<n;j++)  { scanf("%i",&b[j]); }
+        printf("Suma vectorilor:\n");
+            q = 0;
+            i = 0;
+            j=0;
+        for(q = 0;q<n;q++) {
+            sum = a[i]+b[j];
+            i++;
+            j++;
+            c[q] = sum;
+            printf("%i ",c[q]); }
+}
+
+//Scrieţi un program care citeşte de la tastatură doi vectori de numere de aceeaşi dimensiune şi calculează produsul scalar al acestora. Produsul scalar reprezinta suma produselor element cu element (Ex. a=(2,3) si b=(4,5) axb=2*4+3*5=8+15=23 )
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n,i,j,q;
+    int a[100],b[100];
+    scanf("%i",&n);
+    
+    for(i = 0; i<n;i++) { scanf("%i",&a[i]); }
+    for(j = 0; j<n;j++)  { scanf("%i",&b[j]); }
+            
+        int p = 0;
+            q = 0;
+            i = 0;
+            j=0;
+        for(q=0;q<n;q++){
+            p = p + a[i]*b[j];
+            i++;
+            j++; }
+
+        printf("Produsul scalar al vectorilor = %i\n", p);
+        return 0;
+}
+
+//Introduceti de la tastatura o succesiune de n  numere intregi, stocate intr-un vector cu dimesniunea maxima de 50. Modificati fiecare element stocat prefixand fiecare valoare cu cifra 9. Astfel, daca v[i]=123 valoarea inlocuita va fi 9123.
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n,i;
+    int a[50];
+    scanf("%i",&n);
+    
+    for(i=0;i<n;i++) {
+
+        scanf("%i", &a[i]);
+        printf("%i,",a[i]);
+    }
+    printf("\n");
+    
+    for(i=0;i<n;i++) {
+        printf("9%i,",a[i]);
+    }
+}
+
+//#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n,i;
+    int a[50];
+    scanf("%i",&n);
+    
+    for(i=0;i<n;i++) {
+
+        scanf("%i", &a[i]);
+        printf("%i,",a[i]);
+    }
+    printf("\n");
+    
+    for(i=0;i<n;i++) {
+        printf("9%i,",a[i]);
+    }
+}
+//Introduceti de la tastatura o succesiune de n  numere intregi, stocate intr-un vector cu dimesniunea maxima de 50. Modificati valorile stocate conform urmatorului algoritm:
+primul si ultimul element raman neschimbate;
+elementul de pe pozitia i se calculeaza ca fiind [(vi-1 + vi +vi+1))/3], unde cu [v] am notat partea intreaga  
+#include <stdio.h>
+int main() {
+    int n,i,j;
+    int a[50],b[50];
+    scanf("%i",&n);
+    for(i=0;i<n;i++) {
+        scanf("%i", &a[i]);
+        printf("%i,",a[i]);
+    }
+    printf("\n");
+    b[n-1]=a[n-1];
+    b[0]=a[0];
+    printf("%i,",b[0]);
+    for(j=1;j<n-1;j++) { 
+        b[j] = (a[j-1]+a[j]+a[j+1])/3;
+        printf("%i,",b[j]);
+    }
+    printf("%i,",b[n-1]);
+}
+
+// Fie o matrice patratica de ordinul n, cu n maxim 100. Afisati suma elementelor de pe diagonala principala.
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main() {
+    int n,i,j,s;
+    scanf("%i",&n);
+    int arr[100][100];
+    for(i=0;i<n;i++) {
+        for(j=0;j<n;j++) {
+            scanf("%i",&arr[i][j]);
+      }
+    }
+    s = 0;
+    for(i=0;i<n;i++) {
+        for(j=0;j<n;j++) {
+            if(i == j) s +=arr[i][j];
+            
+          }
+        }
+    printf("%i",s);
+    return 0;
+}
+
+//Fie o matrice patratica de ordinul n. Determinati elementul maxim de pe fiecare linie, pe care il memorati intr-un tablou unidimensional, pe pozitia corespunzatoare liniei. La final afisati continutul acestuia.
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n,i,j,max=0;
+    scanf("%i",&n);
+    int a[n][n];
+    for(i = 0;i<n;i++) {
+        for(j=0;j<n;j++) {
+            scanf("%i",&a[i][j]);
+            if(a[i][j]>=max) max=a[i][j];
+                  }
+    printf("%i ",max);     
+     max = 0;       
+    }
+}
+
+//Fie o matrice patratica de ordinul n ale caror elemente sunt formate din 0 si 1. 
+
+Generati elementele matricei, prin alternarea cifrelor de 0 si 1. Exemplu pentru o matrice de ordinul 3:
+              Primul element este 0.
+         2. Inlocuiti cifrele de 1 cu valoarea 2
+         
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n,i,j,x;
+    scanf("%i",&n);
+    int arr[n][n];
+    
+    for(i=0;i<n;i++) {
+        for(j=0;j<n;j++) {
+            x=1;
+            if((i+j)%2==0) x = 0;
+            arr[i][j]=x;
+
+        }
+    }
+    
+    for(i=0;i<n;i++) {
+        for(j=0;j<n;j++) {
+            printf("%i ",arr[i][j]);
+        }
+    printf("\n");
+    }
+}
+
+//Scrieţi un program care citeşte de la tastatură un număr natural scris în baza 10 şi afişează reprezentarea acestuia în baza 2. Se va folosi  un vector pentru a stoca valorile din reprezentarea în baza 2 a numărului.
+// Scrieţi un program care citeşte de la tastatură un număr natural scris în baza 10 şi afişează reprezentarea acestuia în baza 2. Se va folosi  un vector pentru a stoca valorile din reprezentarea în baza 2 a numărului.
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int n,f,l,arr[50],i=0;
+    scanf("%i",&n);
+    printf("Numarul %i in baza 2 este ",n);
+    while(n!=0) {
+        i++;
+        l=n%2;
+        f =n/2;
+        n=f;
+        arr[i] = l;
+        
+    }
+    for(int j=i;j!=0;j--) {
+        printf("%i",arr[j]);
+    }
+}
+
+//Scrieţi un program care citeşte de la tastatură un număr natural n scris în baza 10 şi un număr natural b, cu 2 ≤ b ≤ 10. Afişaţi reprezentarea lui n în baza b.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int n,f,l,b,i=0,arr[50];
+    scanf("%i",&n);
+    scanf("%i",&b);
+    while(n!=0) {
+        i++;
+        l = n % b;
+        f =n/b;
+        n=f;
+        arr[i] = l;
+    }
+    for(int j=i;j!=0;j--) {
+        printf("%i",arr[j]);
+    }
+}
+
+//Sa se scrie un program care citeste n numere reale (n citit de la tastatura) si afla care este maximul, respectiv minimul dintre acestea.
+#include <stdio.h>
+int main() {
+    int n,i;
+    scanf("%i",&n);
+    float arr[n];
+    for(i=0;i<n;i++) {
+        scanf("%f",&arr[i]);
+    }
+    float min = 0;
+    for(i=0;i<n;i++) 
+        if(arr[i]<min) min = arr[i];
+    float max = 0;
+    for(i=0;i<n;i++) 
+        if(arr[i]>max) max = arr[i];
+    printf("Cele %i numere sunt in intervalul [%f,%f].",n,min,max);
+}
+
+//Sa se scrie un program care citeste un numar intreg si afiseaza media cifrelor sale. 
+#include <stdio.h>
+int main() {
+    int n,a[50],i=0, f, l;
+    float s = 0;
+    scanf("%i",&n);
+    l=0;
+    f=0;
+    while(n!=0) {
+        l = n % 10;
+        f = n / 10;
+        n = f;
+        a[i] = l;
+        i++;
+    }
+    int count = 0;
+    for(int j = 0;j<i;j++) {
+        s = s + a[j];
+        count++;
+    }
+    s = s/count;
+    if(s<0) s= s*-1;
+    printf("Media cifrelor este %f.",s);
+    return 0;
+}
+
+//Scrieti un program care, pentru un numar intreg citit de la tastatura, calculeaza cifra maxima a acestuia. 
+#include <stdio.h>
+int main() {
+    int n,a[50],i=0, f, l,max = 0,nr;
+    scanf("%i",&n);
+    nr = n;
+    if(n<0) n = n*-1;
+    while(n!=0) {
+        l = n % 10;
+        f = n / 10;
+        n = f;
+        a[i] = l;
+        i++;
+    }
+    for(int j = 0;j<i;j++) {
+        if(a[j]>max) max = a[j];
+    }
+    printf("Numarul %i are cifra maxima %i.",nr, max);
+    return 0;
+}
+
+//Sa se scrie un program care, pentru un numar natural dat, creeaza un nou numar, format doar din cifrele pare ale acestuia (in aceeasi ordine in care acestea apar in numarul original!).
+#include <stdio.h>
+int main() {
+    int n,a[50],i=0, f, l;
+    scanf("%i",&n);
+    printf("Numarul format din cifrele pare ale lui %i este ",n);
+    while(n!=0) {
+        l = n%10;
+        f=n/10;
+        n=f;
+        a[i]=l;
+        i++; }
+    int count=0;
+    for(int j =i-1;j>=0;j--) {
+        if(a[j]%2 == 0)  { count++;
+            printf("%i",a[j]); }
+    }
+    if(count == 0) printf("0");
+    printf(".");
+}
+
+//Să se scrie un program care determină frecvența de apariție a unei cifre d  într-un număr dat  n (presupunem ca numarul este scris in baza 10). 
+#include <stdio.h>
+int main() {
+    int n, d,l,f,i=0,a[50];
+    scanf("%i%i",&n,&d);
+    int nr = n;
+    if(n<0) n = n*-1;
+    while(n!=0) {
+        l=n%10;
+        f=n/10;
+        n=f;
+        a[i]=l;
+        i++;
+    }
+    int count = 0;
+        for(int j = i-1;j>0;j--) {
+        if(a[j] == d) count++;  
+    }
+    if(nr == 0 && d == 0) printf("Numarul 0 are 1 cifre de 0.");
+    else
+    printf("Numarul %i are %i cifre de %i.",nr,count,d);
+    return 0;
+}
+
+//Se da un nr. natural d nenul si un sir cu n numere. Aflati numarul maxim din sir, care se divide cu d.
+#include <stdio.h>
+int main() {
+    int d,n,v[100],max=0,i;
+    scanf("%i",&d);
+    scanf("%i",&n);
+    for(i = 0;i<n;i++) {
+        scanf("%i",&v[i]);
+    }
+    max = 0;
+    for(i=0;i<n;i++) {
+        if(v[i]%d==0 && v[i]>max) max = v[i];
+    }
+    printf("Numarul maxim care se divide cu %i este %i.", d,max);
+}
+
+//Calculati rasturnatul (sau oglinditul) unui numar natural n citit de la tastatura. 
+#include <stdio.h>
+int main() {
+    int n,j,l,f,i;
+    scanf("%i",&n);
+    int a[1000];
+    if(n<0) n = n*-1;
+    int nr = n;
+    if(nr == 0) {
+        printf("Oglinditul lui 0 este 0.");
+        return 1;
+    } 
+    while(n!=0) {
+        l=n%10;
+        f=n/10;
+        n=f;
+        a[i]=l;
+        i++;
+    }
+    printf("Oglinditul lui %i este ",nr);
+    for(j = 0;j<i;j++) {
+        printf("%i",a[j]);
+    }
+    printf(".");
+    return 0;
+}
+
+//Pentru un numar natural dat, sa se afiseze reprezentarea acetuia in baza 2.
+#include <stdio.h>
+int main() {
+    int n,f,l,arr[50],i=0;
+    scanf("%i",&n);
+    printf("Numarul %i in baza 2 este ",n);
+    while(n!=0) {
+        i++;
+        l=n%2;
+        f =n/2;
+        n=f;
+        arr[i] = l; 
+    }
+    for(int j=i;j!=0;j--)  {
+        printf("%i",arr[j]);
+    }
+}
+
+//Pentrun un număr natural n dat, să se afișeze reprezentarea acestuia în baza b (b<10), n și b citite de la tastatură.
+#include <stdio.h>
+int schimb_baza(int, int);
+int main() {
+    int n,b;
+    scanf("%i%i",&n,&b);
+    printf("Numarul %i in baza %i este ",n,b);
+    schimb_baza(n,b);
+}
+int schimb_baza(int nr,int bz) {
+    int temp,rest,v[10],i=0;
+    temp = nr;
+    while(temp!=0) {
+        rest = temp%bz;
+        temp/=bz;
+        i++;
+        v[i]=rest;
+    }
+    for(int j=i;j>0;j--) {
+        printf("%i",v[j]);
+    }
+    return 1;
+}
+
+//Scrieti un program care citeste doua numere, reprezentand doi ani, si afiseaza in ce zi cade ziua programatorului in fiecare an dintre cei doi ani.
+#include <stdio.h>
+
+void ziuaprogr(int, int);
+
+int main() {
+    int unul_an,doi_an;
+    scanf("%i%i",&unul_an,&doi_an);
+    ziuaprogr(unul_an,doi_an);
+}
+void ziuaprogr(int x, int y) {
+    for(int cnt=x;cnt<=y;cnt++) { if(cnt%4==0) printf("12 septembrie %i\n",cnt);
+    else printf("13 septembrie %i\n",cnt);  
+    }
+}
+
+//Scrieti un program C care calculeaza suma seriei 1 +11 + 111 + 1111 + ... , cu n termeni. folositi variabile de tip long int pentru a retine suma.
+#include <stdio.h>
+#include <math.h>
+
+int suma(long int);
+
+int main() {
+    int n;
+    scanf("%i",&n);
+    suma(n);
+}
+
+int suma(long int x) {
+    int i=0;
+    long int sum=0;
+    for(i=0;i<x;i++) {
+        sum=sum+pow(10,i);
+        printf("%li ",sum);
+        if(i<x-1) printf(" + ");
+    }
+    sum = 0;
+    printf("\nSuma este : ");
+    for(i=0;i<x;i++) {
+        sum=sum+pow(1,i);
+        printf("%li",sum);
+    }
+    printf(".");
+    return 1;
+}
+
+//Scrieti un program C pentru a verifica daca un numar citit de la tastatura, este numar Armstrong. Indicatie. Un numar intreg pozitiv este numar Armstrong daca, dat n numarul de cifre abcd... = an + bn + cn + dn + ...
+#include <stdio.h>
+#include <math.h>
+
+void armstrong(int);
+
+int main() {
+    int n;
+    scanf("%i",&n);
+    armstrong(n);
+}
+
+void armstrong(int x) {
+    int i=0,a[15],suma=0;
+    int temp = x;
+    while(temp!=0) {
+        i++;
+        a[i] = temp%10;
+        temp/=10;
+    }
+    for(int j = 0;j<=i;j++) {
+        suma = suma+pow(a[j],i);
+        }
+    if(suma==x) printf("Numarul %i este numar Armstrong, cu suma %i",x,suma);
+    else printf("Numarul %i NU este numar Armstrong, are suma %i",x,suma);
+}
+
+//Scrieți un program în C pentru a calcula suma tuturor elementelor vectorului
+#include <stdio.h>
+
+int main() {
+    int n, v[50],i;
+    scanf("%i",&n);
+    for(i=0;i<n;i++) {
+        scanf("%i",&v[i]);
+    }
+    int s = 0;
+    for(i=0;i<n;i++) {
+        s = s+v[i];
+    }
+    printf("%i",s);   
+}
+
+//Scrieți un program în C pentru a stoca elemente într-un vector și afisati-l.
+
+#include <stdio.h>
+
+int main() {
+    int n,i,a[50];
+    scanf("%i",&n);
+    for(i=0;i<n;i++) scanf("%i",&a[i]);
+    for(i=0;i<n;i++) printf("%i  ",a[i]);
+    
+}
+
+//Scrieți un program în C pentru a citi n numere de valori intr-un vector și afișați-l în ordine inversă.
+#include <stdio.h>
+
+int main() {
+    int n,i,a[50];
+    scanf("%i",&n);
+    for(i=0;i<n;i++) scanf("%i",&a[i]);
+    for(i=n-1;i>=0;i--) printf("%i  ",a[i]);
+    
+}
+
+//Scrieți un program în C pentru a număra un număr total de elemente duplicate dintr-un vector.
+#include <stdio.h>
+
+int main() {
+    int n,i,j,a[50],cnt=0;
+    scanf("%i",&n);
+    for(i=0;i<n;i++) scanf("%i",&a[i]);
+    
+    for(i=0;i<n;i++) {
+        for(j=i+1;j<n;j++) {
+            if(a[i]==a[j]) cnt++; }
+        
+    }
+    printf("Numarul total de elemente duplicate este: %i",cnt);  
+}
+
+//Scrieți un program în C pentru a afisa toate elementele unice dintr-un vector
+#include <stdio.h>
+int main(){
+int n, nr, i, g, v[100];
+scanf ("%d", &n);
+for (i=1; i<=n; i++){
+scanf ("%d", &nr);
+v[i]=nr;
+}
+printf ("Elementele unice gasite in vector sunt:\n");
+for (i=1; i<=n; i++){
+for (g=1; g<=n; g++){
+if (v[i]==v[g] && g!=i){
+g=1;
+break;
+}
+if (g==n){
+printf ("%d ", v[i]);
+g=1;
+break;
+}
+}
+}
+}
+
+// Fie o matrice patratica de ordinul n, cu n maxim 100. Afisati suma elementelor de pe diagonala principala.
+#include <stdio.h>
+
+int main() {
+    int n,i,j,s = 0;
+    scanf("%i",&n);
+    int arr[n][n];
+    
+    for(i=0;i<n;i++) 
+        for(j=0;j<n;j++) scanf("%i",&arr[i][j]);
+        
+    for(i=0;i<n;i++) 
+        for(j=0;j<n;j++) {
+            if(i == j) s=s+arr[i][j];
+        }
+    printf("%i",s);
+    
+}
+
+//Fie o matrice patratica de ordinul n. Determinati elementul maxim de pe fiecare linie, pe care il memorati intr-un tablou unidimensional, pe pozitia corespunzatoare liniei. La final afisati continutul acestuia.
+#include <stdio.h>
+
+int main() {
+    int n,i,j,max = 0;
+    scanf("%i",&n);
+    int v[n][n], a[n];
+    for(i = 0;i<n;i++)
+        for(j = 0;j<n;j++) scanf("%i",&v[i][j]);
+    int z = 0;
+    for(i = 0;i<n;i++) {
+        for(j = 0;j<n;j++) {
+            if(max<v[i][j]) max = v[i][j];
+        }
+    a[z]=max;
+    z++;
+    max=0;
+    }
+    for(int c=0;c<j;c++) {
+        printf("%i ",a[c]);
+    }
+}
+
+//Fie o matrice patratica de ordinul n ale caror elemente sunt formate din 0 si 1. 
+
+Generati elementele matricei, prin alternarea cifrelor de 0 si 1. Exemplu pentru o matrice de ordinul 3:
+              Primul element este 0.
+         2. Inlocuiti cifrele de 1 cu valoarea 2
+
+#include <stdio.h>
+int main()
+{
+    int n,i,j,v[100][100];
+    scanf("%d", &n);
+    for(i=0;i<n;i++)
+        for(j=0;j<n;j++)
+            v[i][j]=(i+j)%2;
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+            printf("%i ",v[i][j]);
+        printf("\n");
+    }
+}
+
+//Scrieţi un program care citeşte de la tastatură un număr natural scris în baza 10 şi afişează reprezentarea acestuia în baza 2. Se va folosi  un vector pentru a stoca valorile din reprezentarea în baza 2 a numărului.
+#include <stdio.h>
+
+void baza2(int);
+
+int main() {
+    int n;
+    scanf("%i",&n);
+    printf("Numarul %i in baza 2 este ",n);
+    baza2(n);
+    
+}
+
+void baza2(int x) {
+    int i=0,v[50];
+    while(x!=0) { v[i]=x%2;
+    x=x/2;
+    i++;
+    }
+
+    for(int j = i-1;j>=0;j--) {
+        printf("%i",v[j]);
+    }
+}
+
+//Scrieţi un program care citeşte de la tastatură un număr natural n scris în baza 10 şi un număr natural b, cu 2 ≤ b ≤ 10. Afişaţi reprezentarea lui n în baza b.
+
+#include <stdio.h> 
+
+void bazax(int,int);
+
+int main() {
+    int numar,baza;
+    scanf("%i%i",&numar,&baza);
+    bazax(numar,baza);
+}
+
+void bazax(int nr,int bz) {
+    int i=0,v[50];
+    while(nr!=0) {
+        v[i]=nr%bz;
+        nr/=bz;
+        i++;
+    }
+    for(int j=i-1;j>=0;j--) {
+        printf("%i",v[j]);
+    }
+}
+
+//Scrieti o functie care calculeaza cea mai mare putere a lui 2, mai mica sau egala cu un numar n, primit ca parametru in functie. Prototip: int cea_mai_mare_putere(int n);
+
+int cea_mai_mare_putere(int n) {
+    int z=1,j=0;
+    while(z<n) {
+        z = z*2;
+        if(z<n) j++;}
+    if(z ==2) j = 1;
+    return j;
+}
+
+//Scrieti o functie care returneaza cifra care apare cel mai des in cadrul unui numar natural n, primit ca parametru. Daca exista mai multe cifre cu acelasi (cel mai mare) numar de aparitii, functia o va returna pe cea mai mare dintre ele. Prototip: int cifraCeaMaiIntalnita(int n);
+int cifraCeaMaiIntalnita(int n){
+    int c = 0, k, arr[15], s = 0, max = 1, max1 = -1;
+    while (n != 0){
+        arr[c] = n % 10;
+        n = n / 10;
+        c++;
+    }
+    for(int j = 0; j < c ;j++){
+       for(int i = 0; i < c ;i++){
+           if( arr[j] == arr[i]){
+             s++;}
+       }
+        if( max < s){
+            max = s;
+            k = arr[j];
+            }
+        s = 0;
+    }
+    if (max > 1)
+      return k;
+    else{
+        max1 = arr[0];
+        for(int i = 0; i < c ;i++){
+            if( max1 <= arr[i])
+              max1 = arr[i];
+        }
+        return max1;
+    }
+}
+
+//Scrieţi o funcţie care verifica dacă un număr întreg n conţine cifra c. Numerele n şi c vor fi date ca parametri. Functia va returna numarul de aparitii ale cifrei in numar, sau 0, in cazul in care cifra nu apare in numar. Antetul funcţiei este urmatorul: int contine(int n, int c).
+int contine(int n, int d) {
+    int rest,temp,a[50],i = 0;
+    temp = n;
+    while(temp!=0) {
+        rest = temp%10;
+        temp = temp/10;
+        a[i] = rest;
+        i++; }
+    int cnt = 0;
+    for(int j = 0;j<i;j++) {
+        if(a[j]==d) cnt++;
+    }
+    if(cnt>0) return cnt;
+    else 
+    return 0;
+}
+
+//Scrieţi o funcţie care să verifice dacă un număr întreg este prim sau nu. Funcţia va returna valoarea 1 dacă argumentul este număr prim şi 0 în caz contrar. Prototip: int verifica_prim(int n);
+int verifica_prim(int n) {
+    int c = 0;
+    for(int i=2;i<n;i++) {
+        if(n%i==0) c++;
+    }
+    if(c>0) return 0;
+    else return 1;
+}
+
+//Scrieţi o funcţie care calculeaza numărul de cifre ale unui număr întreg nenul dat ca parametru. Prototip: int nr_cifre(int n);
+int nr_cifre(int n) {
+    int rest,temp,i = 0;
+    temp = n;
+    while(temp!=0) {
+        rest = temp%10;
+        temp = temp/10;
+        i++; }
+    n = rest;
+    return i;
+}
+
+//Scrieti o functie care calculeaza ordinul de multiplicitate al unui numar d intr-un intreg n. Ordinul de multiplicitate al lui d in n este egal cu puterea la care apare d in descompunerea in factori primi a lui n). Prototip: int ordin_mult(int n, int d);
+int ordin_mult(int n, int d){
+    int c  = 0;
+    while(n % d == 0){
+        n = n / d;
+        c++;
+    }
+    return c;
+}
+
+//Scrieti o functie care calculeaza produsul cifrelor pare dintr-un numar n intreg, citit de la tastatura. Prototip: int produs_cifre_pare(int n);
+int produs_cifre_pare(int n) {
+    int a[50],rest,temp = n,i=0;
+    while(temp!=0) {
+        rest = temp%10;
+        temp /= 10;
+        a[i]=rest;
+        i++;
+    }
+    int produs=1;
+    int cnt = 0;
+    for(int j=0;j<i;j++) {
+        if(a[j] % 2 == 0) { produs = produs*a[j];
+        cnt++; }
+    }
+    if(cnt>0) return produs;
+    else 
+        return 0;
+}
+
+//
