@@ -1,0 +1,162 @@
+//Tema 3.1. Să se citească de la tastatură n numere întregi, cu 1 < n < 50
+//şi să se memoreze într-un vector. Calculaţi numărul de elemente nule din vector.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+ int i, n, a[51], b;
+ printf("Introdu un numar: ");
+ scanf("%i", &n);
+ do{
+ for(i = 0; i<n;i++)
+ {
+ printf("a[%i] = ", i);
+ scanf("%d", &a[i]);
+ }
+
+ b = 1;
+ if(a[i] == 0) { b = b + 1; }
+ printf("Numarul de elemente nule din vector este %i\n", b);
+ break;
+ }while(1 < n < 50);
+
+}
+//Tema 3.2. Să se citească de la tastatură n numere întregi, cu 1 < n
+//< 50 şi să se memoreze într-un vector. Calculaţi valoarea maximă din vector.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+ int i, n, a[51],vmax;
+ printf("Introdu un numar: ");
+ scanf("%i", &n);
+
+ for(i = 0; i<n;i++)
+ {
+ printf("a[%i] = ", i);
+ scanf("%d", &a[i]);
+ }
+
+ vmax = 0;
+ for(i = 0; i<n; i++) {
+ vmax = vmax + a[i]; }
+ printf("Valoarea maxima din vector este : %d", vmax);
+ 
+ return 0;
+}
+//Tema 3.3. Să se citească de la tastatură n numere întregi, cu 1 < n < 50
+//şi să se memoreze într-un vector. Afişaţi poziţiile pe care se află valoarea minimă din vector.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+ int i, n, a[51],vmin;
+ printf("Introdu un numar: ");
+ scanf("%i", &n);
+
+ for(i = 0; i<n;i++)
+ {
+ printf("a[%i] = ", i);
+ scanf("%d", &a[i]);
+ }
+
+ vmin = a[0];
+ for(i = 1; i < n; i++) {
+ if (a[i] < vmin) {
+ vmin = a[i]; }
+ printf("Vectorul minim este: a[%i]\n", vmin); }
+
+
+ return 0;
+}
+//Tema 3.4. Să se citească de la tastatură n numere întregi, cu 1 < n < 100 şi să
+//se memoreze într-un vector. Afişaţi numerele stocate în vector în ordinea inversă
+//memorării acestora.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+ int i, n, a[101];
+ printf("Introdu un numar: ");
+ scanf("%i", &n);
+
+ for(i = 0; i<n;i++)
+ {
+ printf("a[%i] = ", i);
+ scanf("%d", &a[i]);
+ }
+
+ printf("Elementele inversate ale vectorului sunt : \n");
+ for(i = n-1; i >= 0; i--) {
+ printf("a[%i] = %i\n", i, a[i]);
+ }
+
+ return 0;
+}
+//Tema 3.5. Se introduc succesiv numere până la întâlnirea lui 0, dar nu mai
+//multe de 1000. Să se memoreze numerele introduse într-un vector şi să se calculeze media
+//lor aritmetică.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+ int i, n, a[1001];
+ float total, media;
+ printf("Introdu un numar: ");
+ scanf("%i", &n);
+
+ for(i = 0; i<n;i++)
+ {
+ printf("a[%i] = ", i);
+ scanf("%d", &a[i]);
+ if(a[i] == 0) {
+ printf("S-a introdus zero.Functia a luat sfarsit.");
+ break;
+ }
+
+ }
+
+ media = 0;
+
+ for(i = n-1; i >= 0; i--) {
+ media = a[i]+media;
+ printf("%i + %f = %f\n",a[i], media, media);
+
+ }
+
+ total = media / n;
+ printf("Media aritmetica a tabloului este : %f", total);
+
+ return 0;
+}
+//Tema 3.6. Se introduc succesiv numere până la întâlnirea lui 0, dar nu mai
+//multe de 100. Să se memoreze numerele introduse într-un vector şi să se calculeze numărul
+//de elemente pare.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+ int i, n, a[101], par,total;
+
+ printf("Introdu un numar: ");
+ scanf("%i", &n);
+
+ for(i = 0; i<n;i++)
+ {
+ printf("a[%i] = ", i);
+ scanf("%d", &a[i]);
+ if(a[i] == 0) {
+ printf("S-a introdus zero.Functia a luat sfarsit.");
+ break;
+ }
+
+ }
+
+ par = 0;
+
+ for(i = n-1; i >= 0; i--) {
+ if(a[i] % 2 == 0) {
+ par = par + 1;
+ }
+
+ }
+
+ total = par;
+ printf("Nr de elemente pare a tabloului este : %i", total);
+
+ return 0;
+}
