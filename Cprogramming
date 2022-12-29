@@ -1489,3 +1489,249 @@ int produs_cifre_pare(int n) {
 }
 
 //
+
+
+laborator 8:
+
+//Scrieti un program care lucreaza cu o variabila globala - vector de 10 elemente intregi. Definiti o functie care primeste ca parametru o valoare si cauta valoarea respectiva in vector: daca exista, functia intoarce 1, altfel intoarce 0.
+//In programul principal, umpleti vectorul cu elemente citite de la tastatura, cititi o valoare, apoi demonstrati cum se utilizeaza functia definita mai sus.
+#include <stdio.h>
+
+int cauta(int v[],int x) {
+    int i, gasit = 0;
+    for(i = 0;i < 10; i++) {
+        if(v[i]==x) gasit = 1;
+    }
+    return gasit;
+}
+
+int main() {
+    int v[10],i;
+    for(i = 0; i < 10;i++) {
+        scanf("%i",&v[i]);
+    }
+    int x;
+    scanf("%i",&x);
+    if(cauta(v,x)==1) printf("Sirul contine valoarea");
+    else printf("Sirul NU contine valoarea");
+}
+
+//a) Scrieti o functie care primeste ca parametri un tablou unidimensional (vector) de numere intregi si dimensiunea acestuia si calculeaza si returneaza maximul dintre elementele tabloului. 
+//Prototip: int maxim(int v[], int n);
+//b) Scrieti o functie care primeste ca parametri un tablou unidimensional (vector) de numere intregi si dimensiunea acestuia si il afiseaza la consola, cu elementele separate prin spatii.
+//Prototip: void afiseaza(int v[ ], int n);
+//c)Scrieti un program C in care testati functiile implementate. programul va citi elementele unui vector de la tastatura, pana la primul 0 introdus.
+#include <stdio.h>
+
+int citeste(int v[],int dimensiune);
+int calculeaza_maxim(int v[],int dim);
+void afiseaza(int v[],int dimensiune);
+
+int main() {
+    int arr[100];
+    int size = citeste(arr,100);
+    int maximul = calculeaza_maxim(arr,size);
+    printf("Vectorul este:\n");
+    afiseaza(arr,size);
+    printf("\nMaximul din vector este %i",maximul);
+}
+
+int citeste(int v[],int dimensiune) {
+    int i=0,n;
+    do {
+        scanf("%i",&v[i]);
+        i++;
+    }while(v[i-1]!=0 && i<dimensiune);
+    n=i;
+    return n;
+} 
+
+int calculeaza_maxim(int v[],int size) {
+    int i;
+    int maxim = v[0];
+    for(i=1;i<=size-1;i++) 
+        if(v[i]>maxim) maxim = v[i]; 
+    return maxim;
+}
+
+void afiseaza(int v[],int size) {
+    int i;
+    for(i=0;i<size;i++) 
+        printf("%i ",v[i]);
+}
+
+//a) Scrieti o functie care primeste ca parametru un vector de numere reale si dimensiunea acestuia, in care se calculeaza si returneaza cate elemente din vector sunt mai mari decat media aritmetica a elementelor din vector. 
+//Prototip: int contor(int v[ ], int n);
+//b)  Scrieti o functie care primeste ca parametru un vector de numere reale si calculeaza si returneaza minimul din acest vector. 
+//Prototip: int minim(int v[ ], int n);
+//c) Scrieti un program C in care testati functiile implementate. In program se vor citi elementele vectorului de la tastatura.
+#include <stdio.h> 
+
+int contor(int v[], int n);
+
+int minim(int v[], int n);
+
+int main() {
+    int arr[100];
+    int n,i;
+    scanf("%i",&n);
+    for(i=0;i<n;i++) scanf("%i",&arr[i]);
+    printf("Minimul din vector este %i\n",minim(arr,n));
+    printf("%i elemente sunt >= cu media aritmetica a elementelor din vector",contor(arr,n));
+    
+}
+
+int contor(int v[], int n) {
+    int suma=0,cnt=0;
+    float media;
+    for(int i=0;i<n;i++) {
+        suma=suma+v[i];
+    }
+    media=suma/n;
+    for(int i=0;i<n;i++) {
+        if(v[i]>media) cnt++;
+    }
+    return cnt;
+}
+int minim(int v[], int n) {
+    float min=v[0];
+    for(int i=1;i<n;i++) {
+        if(v[i]<min) min = v[i];
+    }
+    return min;
+}
+
+//Se dă un şir de numere reale. Scrieti cate o functie care adreseaza fiecare din situatiile de mai jos.
+//In final, scrieti un program C care sa demonstreze cum se utilizeaza aceste functii.
+//a) Să verifice dacă şirul este o progresie aritmetică (diferenţa dintre oricare două numere alăturate este aceeaşi, de exemplu: 1,4,7,10,13). Prototip: 
+//int este_progresie_aritmetica(int v[], int n);
+//b) Sa verifice daca sirul contine doar numere in ordine crescatoare. Prototip:
+//int este_crescator(int v[], int n);
+//c) Sa verifice daca sirul contine doar numere in ordine descrescatoare.
+//int este_descrescator(int  v[], int n);
+#include <stdio.h>
+
+int este_progresie_aritmetica(int v[], int n) {
+    int cnt=0,progresie=0;
+    for(int i=0;i<n;i++) {
+        if(v[i-1]==(v[i]+v[i-2])/2) cnt++;
+    }
+    progresie=v[1]-v[0];
+    for(int i=2;i<n;i++) {
+        if(v[i]-v[i-1]!=progresie) return 0;
+    }
+    return 1;
+}
+int este_crescator(int v[], int n) {
+    int cnt=0;
+    for(int i=1;i<n;i++)
+        if(v[i]>v[i-1]) cnt++;
+    if(cnt==n-1) return 1;
+    return 0;
+}
+
+int este_descrescator(int  v[], int n) {
+    int cnt=0;
+    for(int i=n-1;i>0;i--) {
+        if(v[i]>v[i-1]) cnt++;
+    }
+    if(cnt==n-1) return 1;
+    return 0;
+}
+
+int main() {
+    int n;
+    scanf("%i",&n);
+    int arr[n];
+    for(int i=0;i<n;i++) scanf("%i",&arr[i]);
+    printf("Sirul este: \n");
+    if(este_progresie_aritmetica(arr,n)==1) { printf("- Progresie aritmetica: DA\n");
+        if(este_crescator(arr,n)==1) printf("- Crescator: DA\n- Descrescator: NU\n");
+        if(este_crescator(arr,n)==0) printf("- Crescator: NU\n- Descrescator: DA\n");
+        return 0;
+    }
+    if(este_progresie_aritmetica(arr,n==0)) 
+        printf("- Progresie aritmetica: NU\n- Crescator: NU\n- Descrescator: NU\n");
+}
+
+//Sa se scrie o functie care primeste ca parametri un vector si dimensiunea acestuia (un intreg n) si numara cate numere pare contine acest vector. Antetul functiei va fi:
+//int nr_pare(int v[], int dim);
+int nr_pare(int v[],int dim) {
+    int cnt=0;
+    for(int i=0;i<dim;i++) 
+        if(v[i]%2==0) cnt++;
+    return cnt;
+}
+
+//Sa se scrie o functie care primeste ca parametri un vector si dimensiunea acestuia (un intreg n) si afla maximul din acest vector. Antetul functiei va fi
+//double max(double v[], int dim);
+double max(double v[], int dim) {
+    int max=v[0];
+    for(int i =1;i<dim;i++) {
+        if(v[i]>max) max=v[i];
+    }
+    return max;
+}
+
+//a) Scrieti o functie care primeste ca parametru un vector si il initializeaza cu valori introduse de la tastatura.
+//void citeste_vector( double vector[ ], int n ) ;
+//b) Scrieti o functie care primeste un vector ca parametru si il afiseaza pe ecran.
+//void afiseaza_vector( double vector[ ], int n ) ;
+//c) Scrieti o functie care calculeaza media aritmetica a unui tablou de numere double. Functia va primi ca parametri tabloul si dimensiunea acestuia si va returna media aritmetica. Antetul functiei va fi 
+//double medie( double vector[ ], int n ) ;
+//d) Folositi urmatorul program C care sa testeze aceste functii.
+
+#include <stdio.h>
+#define N 5
+void citeste_vector( double vector[ ], int n ) { 
+    for(int i=0;i<n;i++) scanf("%lf",&vector[i]);
+}
+void afiseaza_vector( double vector[ ], int n ) {
+    for(int i=0;i<n;i++) printf("%lf ",vector[i]);
+    printf("\n");
+}
+double medie( double vector[ ], int n ) {
+    double suma=0;
+    for(int i=0;i<n;i++) suma+=vector[i];
+    double media=0;
+    media=suma/n;
+    return media;
+}
+
+int main()
+{
+double data[N]={0} ;
+
+citeste_vector( data, N );
+afiseaza_vector(data, N);
+printf("Media aritmetica este %lf.\n", medie( data, N ));
+}
+
+//Scrieti o functie gaseste_cifra, cu doi parametri.Antetul functiei va fi
+//int gaseste_cifra(int a, int b);
+//Functie primeste prin intermediul parametrului a un numar natural cu cel mult 8 cifre si prin intermediul parametrului b o cifra. Functia returneaza numarul de aparitii ale cifrei b in scrierea numarului a.
+int gaseste_cifra(int a, int b) {
+    int temp=a,v[16],i=0,cnt=0;
+    while(temp!=0) {
+        v[i]=temp%10;
+        temp/=10;
+        i++;
+    }
+    for(int j=0;j<i;j++) {
+        if(v[j]==b) cnt++;
+    }
+    return cnt;
+}
+
+// Sa se scrie o functie care calculeaza suma a doi vectori (element cu element) pe primele n pozitii (n primit de asemenea ca parametru). Rezultatul va fi stocat intr-un vector, primit de asemenea ca parametru.
+//void suma (int v1[], int v2[], int s[], int dim);
+void suma (int v1[], int v2[], int s[], int dim) {
+    int i=0,j=0,z;
+    for(z=0;z<dim;z++) {
+        s[z]=v1[i]+v2[j];
+        i++;
+        j++;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
