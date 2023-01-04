@@ -1,0 +1,357 @@
+//Să se scrie o funcţie,  intr-un program, care primeşte ca parametri un caracter şi un şir de caractere şi returnează pozitia pe care se găseşte prima apariţie  a caracterului în şir.
+#include <stdio.h>
+#include <string.h>
+int cautare(char v[],char x) {
+    for(int i=0;v[i]!='\0';i++) 
+       if(v[i]==x) return i;
+    return 0;
+}
+
+int main() {
+    char n,string[25];
+    fgets(string,50,stdin);
+    scanf("%c",&n);
+    string[strlen(string)-1]='\0';
+    if(cautare(string,n)!=0)  printf("Caracterul %c se afla pe pozitia %i in sirul: %s",n,cautare(string,n),string);
+    else printf("Caracterul %c nu se afla in sirul: %s",n,string); 
+    printf(".");
+}
+
+//Scrieţi un program care calculează şi afişează statistici despre un şir de caractere citit de la tastatură: numărul total de caractere, numărul de litere, numărul de cifre.
+#include <stdio.h>
+#include <string.h>
+
+int lungime(char v[]) {
+    int i = 0;
+    while(v[i]!='\0') i++;
+    return i;
+}
+int litere(char v[]) {
+    int cnt=0;
+    for(int i = 0;v[i]!='\0';i++) {
+        if(v[i]>=65 && v[i]<=90) cnt++;
+        if(v[i]>=97 && v[i]<=122) cnt++;
+    }
+    return cnt;
+}
+int cifre(char v[]) {
+    int cnt=0;
+    for(int i = 0;v[i]!='\0';i++) {
+        if(v[i]>=48 && v[i]<=57) cnt++;
+    }
+    return cnt;
+}
+int main() {
+    char string[256];
+    fgets(string,256,stdin);
+    string[strlen(string)-1]='\0';
+    printf("Sirul: %s are %i caractere %i litere %i cifre",string,lungime(string),litere(string),cifre(string));
+    
+}
+
+//Scrieţi  o funcţie, intr-un program, care primeşte ca parametri un şir de caractere şi un caracter şi returnează numărul de apariţii ale caracterului în şir.
+#include <stdio.h>
+#include <string.h>
+int aparitia(char v[],char z) {
+    int cnt=0,i=0;
+    while(v[i]!='\0') {
+        if(v[i]==z) cnt++;
+        i++;
+    }
+    return cnt;
+}
+
+int main() {
+    char string[50],x;
+    fgets(string,100,stdin);
+    scanf("%c",&x);
+    string[strlen(string)-1]='\0';
+    printf("Caracterul %c apare de  %i ori in sirul: %s.",x,aparitia(string,x),string);
+}
+
+//Scrieţi  o funcţie, intr-un program,  care primeşte ca parametri un şir de caractere şi doua caractere inlocuieste  toate aparitiile primului caracter in sir cu cel de al doilea..
+#include <stdio.h>
+#include <string.h>
+
+void change(char v[],char x,char y) {
+    int i=0;
+    while(v[i]!='\0') {
+        if(v[i]==x) v[i]=y;
+        i++;
+    }
+    printf("%s",v);
+}
+
+int main() {
+    char array[100],cifra1,cifra2;
+    fgets(array,100,stdin);
+    scanf("%s%s",&cifra1,&cifra2);
+    int charvector = strlen(array)-1;
+    array[charvector]='\0';
+    change(array,cifra1,cifra2);
+    return 0;
+}
+
+//Scrieţi o funcţie, intr-un program,  care testează dacă un şir de caractere primit ca parametru este palindrom. Funcţia va returna 1 dacă şirul este palindrom şi 0 altfel.
+#include <stdio.h>
+#include <string.h>
+
+int palindrom(char v[]) {
+    int ok=1,a=0,b=strlen(v)-1;
+    while(ok==1 && a<=b) {
+        if(v[a]!=v[b]) ok = 0;
+        else {
+            a++;
+            b--;
+        }
+    }
+    return ok;
+}
+int main() {
+    char v[100];
+    fgets(v,100,stdin);
+    v[strlen(v)-1]='\0';
+    palindrom(v);
+    if(palindrom(v)==1) printf("%s este palindrom",v);
+    else printf("%s nu este palindrom",v);
+}
+
+//Scrieţi un program C care pornind de la un şir citit de la tastatură, construieşte şi afişează şirul care conţine cifrele din cel iniţial, gestionat ca valoare numerica, long int.
+#include <stdio.h>
+#include <stdlib.h>
+
+void cifre(char v[]) {
+    int z=0;
+    for(int i=0;v[i]!='\0';i++) { 
+        if(v[i]=='0' && z==0) continue;
+        z++; 
+        if(v[i]>=48 && v[i]<=57 ) {
+            printf("%c",v[i]);
+    }
+}
+}
+int main() { 
+    char v[100];
+    fgets(v,100,stdin);
+    cifre(v);
+}
+
+//Scrieţi un program C care pornind de la un şir citit de la tastatură, construieşte şi afişează şirul care conţine majusculele literelor din cel iniţial, fara a utiliza functia de biblioteca strupr.
+#include <stdio.h>
+#include <string.h> 
+
+void caps(char v[]) {
+    for(int i=0;v[i]!='\0';i++) {
+        if(v[i]>90) v[i] = v[i]-32;
+        printf("%c",v[i]);
+    }
+}
+
+int main() {
+    char capslock[100];
+    fgets(capslock,100,stdin);
+    caps(capslock);
+}
+
+//Scrieţi un program C care pornind de la un şir citit de la tastatură, construieşte şi afişează şirul care conţine minusculele vocalelor din cel iniţial;
+#include <stdio.h>
+#include <string.h>
+
+void vocalemici(char v[]) {
+    for(int i=0;v[i]!='\0';i++) {
+        if(v[i]=='a' || v[i]=='e' || v[i]=='i' || v[i]=='o' || v[i]=='u') printf("%c",v[i]);
+    }
+}
+
+int main() {
+    char vector[100];
+    fgets(vector,100,stdin);
+    vocalemici(vector);
+}
+
+//Scrieţi un program C care pornind de la un şir citit de la tastatură, construieşte şi afişează inversul sirului initial.
+#include <stdio.h>
+#include <string.h>
+
+void revers(char v[]) {
+    int c= strlen(v);
+    for(int i=c-2;i>=0;i--) printf("%c",v[i]);
+    
+}
+
+int main() {
+    char text[100];
+    fgets(text,100,stdin);
+    revers(text);
+}
+
+//Scrieţi un program C care pornind de la un şir citit de la tastatură, construieşte şi afişeaza subşirul care conţine m caractere începând de la poziţia p din şirul iniţial; m şi p se citesc de la tastatura;
+
+#include <stdio.h> 
+#include <string.h>
+
+void print(char v[],int poz,int marime) {
+    int j=0;
+    int length=strlen(v);
+    for(int i=poz-1;i<length-1;i++) {
+        if(j>marime) break;
+        printf("%c",v[i]);
+        j++;
+    }
+    j=poz;
+}
+
+int main() {
+    int p,m;
+    char arr[150];
+    fgets(arr,150,stdin);
+    scanf("%i%i",&p,&m);
+    print(arr,p,m);
+    return 0;
+}
+
+//Scrieţi un program C care pornind de la un şir citit de la tastatură, construieşte şi afişeaza subşirul care conţine caracterele celui iniţial cu excepţia celor m începând de la poziţia p; m şi p se citesc de la tastatura;
+
+#include <stdio.h>
+#include <string.h>
+
+void del(char v[],int pozitia,int marime) {
+    int x=pozitia+marime;
+    for(int i=0;v[i]!='\0';i++) {
+        if(i>=pozitia-1 && i<x-1) continue;
+        else printf("%c",v[i]);
+    }
+}
+
+int main() {
+    char array[100];
+    int p,m;
+    fgets(array,100,stdin);
+    scanf("%i%i",&p,&m);
+    del(array,p,m);
+}
+
+//Se consideră un text cu maximum 255 de caractere, format din litere mici ale alfabetului englez şi spaţii. Textul conţine cel puţin o consoană. Scrieţi un program C care citeşte de la tastatură textul şi  afişează pe ecran numai ultima consoană care apare în text. 
+Exemplu: dacă de la tastatură se introduce textul "Un text la intamplare" pe ecran se va afişa: r.
+
+#include <stdio.h>
+#include <string.h>
+
+char cons(char text[]) {
+    char cons[100];
+    int j=0;
+    for(int i=0;text[i]!='\0';i++) { 
+        if(text[i]!='a' && text[i]!='e' && text[i]!='i' && text[i]!='o' && text[i]!='u') 
+        {   
+            cons[j]=text[i];
+            j++;
+        }
+    }
+    int x=j-2;
+    return cons[x];
+}
+
+int main() {
+    char text[255];
+    fgets(text,255,stdin);
+    printf("Ultima consoana este %c",cons(text));
+    
+}
+
+
+//Scrieţi un program C care citeşte de la tastatură două şiruri de caractere formate din maximum 100 litere mici ale alfabetului englez şi afişează pe ecran cel mai lung sufix comun al celor două şiruri de caractere.
+Exemplu: pentru şirurile marina şi balena se va afişa na.
+
+#include <stdio.h>
+#include <string.h>
+
+void sufix(char v1[],char v2[]) {
+    char sufix[100];
+    int z=0;
+    int length1=strlen(v1),length2=strlen(v2);
+    while(v1[length1]==v2[length2]) {
+        sufix[z]=v1[length1];
+        length1--;
+        length2--;
+        z++;
+    }
+    
+    for(int j=z-1;j>=0;j--) {
+        if(sufix[j]!='\0') printf("%c",sufix[j]);
+    }
+}
+int main() 
+{
+    char cuvant1[30],cuvant2[30];
+    fgets(cuvant1,30,stdin);
+    fgets(cuvant2,30,stdin);
+    cuvant1[strlen(cuvant1)-1]='\0';
+    cuvant2[strlen(cuvant2)-1]='\0';
+    sufix(cuvant1,cuvant2);
+    
+}
+
+//Scrieţi un program care inversează un şir de caractere. Funcţia va primi doi parametri: primul parametru va fi şirul care va fi inversat, al doilea parametru va fi şirul obţinut prin inversare.
+#include <stdio.h>
+#include <string.h>
+
+char invers(char text[]) {
+    int j=strlen(text);
+    for(int i=j-1;i>=0;i--) { 
+        printf("%c",text[i]);
+    }
+    return 0;
+}
+
+int main() {
+    char text[255];
+    fgets(text,255,stdin);
+    text[strlen(text)-1]='\0';
+    invers(text);
+    
+    
+}
+
+/Scrieţi un program C care citeşte un şir de caractere şi îl transformă astfel:
+prima literă devine majusculă;
+prima literă de după fiecare spaţiu sau semn de punctuaţie devine majusculă, restul literelor devin minuscule.
+De exemplu, pentru şirul citit: "Limbajul C are functii, chiar si pentru caractere." se afişeaza: "Limbajul C Are Functii, Chiar Si Pentru Caractere."
+
+#include <stdio.h>
+#include <string.h>
+
+char big(char v[]) {
+    for(int i=0;v[i]!='\0';i++) {
+        if(v[i]==' ' && v[i+1]>90) v[i+1]=v[i+1]-32;
+        printf("%c",v[i]);
+    }
+    return 0;
+}
+
+int main() {
+    char text[255];
+    fgets(text,255,stdin);
+    text[strlen(text)-1]='\0';
+    big(text);
+    
+}
+
+//Scrieţi o funcţie recursivă pentru a inversa un şir de caractere introdus de la tastatură
+#include <stdio.h>
+#include <string.h>
+
+void revers(char *v) {
+    if(*v!='\0') {
+        revers(v + 1);
+        printf("%c",*v);
+    }
+    
+}
+
+int main() {
+    char v[100];
+    fgets(v,100,stdin);
+    v[strlen(v)-1]='\0';
+    revers(v);
+    
+}
