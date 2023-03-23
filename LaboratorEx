@@ -172,3 +172,83 @@ public class Cerc {
 
 	}
 	}
+	
+	
+	
+	
+	
+	
+alte exercitii: 
+	import java.util.Scanner;
+
+public class GreutatePersoana {
+	public static void main(String[] args) {
+	Scanner scan = new Scanner(System.in);
+	System.out.print("Introdu greutatea ta : ");
+	float greutate = scan.nextFloat();
+	System.out.println("Persoana are greutatea de : " + greutate + " kg.");
+	}
+}
+
+//mini calculator in java
+
+import java.util.Scanner;
+
+public class Calculator {
+	public static void main(String[] args) {
+	Scanner scan = new Scanner(System.in);
+
+	System.out.println("Introdu prima cifra : ");
+	float cifra1 = scan.nextFloat();
+
+	System.out.println("Introdu operatia(+//-//*//:) : ");
+	char operatie = scan.next().charAt(0);
+
+	System.out.println("Introdu a doua cifra : ");
+	float cifra2 = scan.nextFloat();
+
+	float rezultat;
+	if(operatie == '+') {
+		rezultat = cifra1+cifra2;
+		System.out.println("Rezultatul este : " + rezultat);
+	}
+	else if(operatie == '-') {
+		rezultat = cifra1-cifra2;
+		System.out.println("Rezultatul este : " + rezultat);
+	}
+	else if(operatie == '*') {
+		rezultat = cifra1*cifra2;
+		System.out.println("Rezultatul este : " + rezultat);
+	}
+	else if(operatie == '/') {
+		rezultat = cifra1/cifra2;
+		System.out.println("Rezultatul este : " + rezultat);
+	}
+	else
+		System.out.println("Operatie invalida.");
+
+	}
+
+}
+
+
+//vector in java
+import java.util.Scanner;
+
+public class Vector {
+	public static void main(String[] args) {
+	System.out.println("Introdu cate elemente doresti sa contina vectorul unidimensional : ");
+	Scanner scan = new Scanner(System.in);
+	int dimensiune = scan.nextInt();
+	System.out.println("Introdu numerele din vector : ");
+	int[] vector = new int[100];
+
+	for(int i=0;i<dimensiune;i++) {
+		vector[i] = scan.nextInt();
+	}
+	System.out.println("Valorile introduse sunt : ");
+	for(int i = 0;i<dimensiune;i++) {
+		System.out.print(" "+vector[i]+" ");
+	} 
+	}
+}
