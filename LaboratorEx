@@ -1,0 +1,174 @@
+// Hello world in java
+public class Test{ 
+ public static void main(String[] args){ 
+   System.out.println("Buna ziua tuturor"); 
+ } 
+} 
+
+
+//erori in java
+public class Erori {
+  public static void main (String[] args){
+    int a;
+    a=5;    
+    int b; 
+    b=3;   
+    int c;    
+    c=a/b;   
+    System.out.println(c);  
+    } 
+  } 
+  
+  //medie java
+  public class Medie {
+   public static void main(String[] args) {
+       double a, b, c;    
+       a=2.2;    
+       b=3.3;    
+       c=10;    
+       double aritm = (a+b+c)/3;
+       System.out.println(aritm);
+       }
+} 
+
+//numere intregi java
+public class NumereIntregi {
+   public static void main(String[] args) {    
+   int numarBaza10=267;    //267
+   int valoareOpt=0413;    //267
+   int valoare16=0x10B;    //267
+   int valoareBinara=0b100001011; 
+   System.out.println(numarBaza10 + valoareOpt ); 
+   System.out.println(valoare16 + valoareBinara );   
+   } 
+} 
+
+//greutate 
+public class Greutate { 
+ public static void main(String[] args) {
+ float greutate = 79.9f;
+ boolean esteInregistrata = false;
+ float nouaGreutate=78.8f;
+ if(greutate>nouaGreutate) esteInregistrata = true;
+ else if(greutate<nouaGreutate) esteInregistrata = false;
+ System.out.println("Greutatea este inregistrata? : " + esteInregistrata);
+ }
+}
+
+
+//ex cu pesti in java
+public class Pesti { 
+ public static void main(String[] args) {
+ int temperaturaApei = 27;
+ boolean suntPestiMulti = true;
+ if(temperaturaApei >= 30) suntPestiMulti = false;
+ else if(temperaturaApei < 30 && temperaturaApei >18) suntPestiMulti = true;
+ else if(temperaturaApei <=18) suntPestiMulti = false;
+ 
+ if ( suntPestiMulti ) System.out.println("Pesti sunt multi");
+ else System.out.println("Pesti sunt putini");
+ }
+}
+
+//locatie pescuit
+public class Locatie {
+	public static void main(String[] args) {
+	String locatie = "Lacul Sinoe";
+	if (locatie!= null) {
+	System.out.println("Loc de pescuit : " + locatie );
+	}
+	}
+}
+
+/* 9.Să se scrie un program Java care calculeaza şi afişeaza suma numerelor intregi din intervalul [1,15]. */
+
+public class Numar {
+	public static void main(String[] args) {
+	int suma=0;
+	for(int i=0;i<=15;i++) {
+	suma=suma+i;
+	}
+
+	System.out.println("Suma este :" + suma);
+	}
+}
+
+/* Să se scrie un program Java care calculeaza şi afişeaza produsul numerelor intregi pare din intervalul [1,20]. Dati mai multe solutii. */
+
+public class Produs {
+	public static void main(String[] args) {
+	long produs = 1;
+	for(int i=1;i<=20;i++) {
+	if(i%2==0) {
+	produs = produs*i;
+			}
+		}
+	System.out.println("Produsul nr. pare de pe intervalul 1-20 este: " + produs);
+	}
+}
+
+
+/* sau for(int i=2;i<=20;i=i+2) {
+	produs = produs*i;
+}
+*/
+
+/* Să se scrie un program Java care traduce numerele de la 1 la 12 în numele lunilor corespunzătoare: Ianuarie, Februarie, ..., Decembrie. */
+
+import java.util.Scanner;
+
+public class Months {
+	public static void main(String[] args) {
+		System.out.println("Introdu o cifra de la 1 la 12 : ");	
+		Scanner scan = new Scanner(System.in);
+		int numar = scan.nextInt();
+		if(numar>=1 && numar <=12) {
+			switch(numar) {
+			case 1 -> System.out.println("Ianuarie");
+			case 2 -> System.out.println("Februarie");
+			case 3 -> System.out.println("Martie");
+			case 4 -> System.out.println("Aprilie");
+			case 5 -> System.out.println("Mai");
+			case 6 -> System.out.println("Iunie");
+			case 7 -> System.out.println("Iulie");
+			case 8 -> System.out.println("August");
+			case 9 -> System.out.println("Septembrie");
+			case 10 -> System.out.println("Octombrie");
+			case 11 -> System.out.println("Noiembrie");
+			case 12 -> System.out.println("Decembrie");
+			}
+		}
+		else System.out.println("Ati introdus un numar gresit.");
+
+
+	}
+}
+
+// cerc in java
+public class Cerc {
+	private double raza;
+	public Cerc(double r) {
+	raza=r;
+	}
+	public double getArie() {
+	return Math.PI*raza*raza;//Math.PI*pow(raza,2);
+	}
+	public double getCircumferinta(){
+	return 2*Math.PI*raza;
+	}
+	public static void main(String[] args) {
+	Cerc cerc1 = new Cerc(5); // raza = 5;
+	System.out.println("Aria cercului este: "+ cerc1.getArie());
+	System.out.println("Circumferinta cercului este: "+ cerc1.getCircumferinta());
+
+	Cerc cerc2 = new Cerc(10);
+	System.out.println(cerc2.getArie());
+	System.out.println(cerc2.getCircumferinta());
+
+	 cerc1 = new Cerc(7); // raza = 5;
+	System.out.println("Aria cercului este: "+ cerc1.getArie());
+	System.out.println("Circumferinta cercului este: "+ cerc1.getCircumferinta());
+	//System.gc(); -- STERGE gunoiul din sistema
+
+	}
+	}
