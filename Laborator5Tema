@@ -1,0 +1,121 @@
+//tema LAB5
+
+/* *5.1. Scrieți un program C/C++ care pentru 2 numere returneaza adevărat dacă unul dintre ele  sau dacă suma lor este 30. */
+
+int check(int nr1,int nr2) {
+    if(nr1 == 30 || nr2 == 30 || nr1+nr2 == 30) return 1;
+    return 0;
+}
+
+int main() {
+    int x,y;
+    scanf("%i%i",&x,&y);
+    if(check(x,y)==1) printf("Adevarat");
+    else printf("Fals");
+    
+}
+
+
+/* 5.2. Scrieți un program C/C++ pentru a verifica dacă două numere întregi nenegative date au aceeași ultima cifră. */
+
+int check(int nr1,int nr2) {
+    if(nr1%10 == nr2%10) return 1;
+    return 0;
+}
+
+int main() {
+    int x,y;
+    scanf("%i%i",&x,&y);
+    if(check(x,y)==1) printf("Numerele au aceiasi ultima cifra");
+    else printf("Numerele nu au aceiasi ultima cifra");
+    
+}
+
+/* 5.3. Scrieți un program C/C++ pentru a verifica dacă două numere întregi nenegative date au același cel mai putin semnificativ bit. Folositi cel putin 2 metode.și ultima cifră. */
+
+int check1nr(int nr1) {
+    int bit1;
+    bit1=(nr1/2)%2;
+    return bit1;
+}
+int check2nr(int nr2) {
+    int bit2;
+    bit2=(nr2/2)%2;
+    return bit2;
+}
+
+int main() {
+    int x,y;
+    scanf("%i%i",&x,&y);
+    if(check1nr(x)==check2nr(y)) printf("Numerele au acelasi ultimul bit");
+    else printf("Numerele nu au acelasi ultim bit");
+    
+} 
+
+
+/* 5.4. Scrieti un program C/C++ pentru eliminarea cifrelor divizibile cu 3 din numar. Folositi cel putin 2 metode. */
+
+
+int main() {
+    int n,v[50],cifra,i=0;
+    scanf("%i",&n) ;
+    int temp = n;
+    printf("Cifrele divizibile cu 3 eliminate sunt: ");
+    while(temp!=0) {
+        cifra = temp%10;
+        if(cifra%3==0) {
+            printf("%i ",cifra);
+        }
+        temp/=10;
+    }
+    
+    
+
+}
+
+/* 5.5. Scrieti un program C/C++ pentru inversarea ordinii elementelor unui vector unidimensional. Folositi cel putin 2 metode. */
+
+
+int main() {
+    int n,v[50],cifra,i=0;
+    scanf("%i",&n) ;
+    for(int i=0;i<n;i++) {
+        scanf("%i",&v[i]);
+
+    }
+    for(int i=0;i<n;i++) {
+        printf("%i ",v[i]);
+    }
+    //prima metoda de inversare: 
+    printf("\ninversarea elementelor: ");
+    for(int i=n-1;i>=0;i--) {
+        printf("%i ",v[i]);
+        
+    }
+    printf("\n");
+    //a doua inversare: 
+    printf("inversarea elementelor cu a doua metoda: ");
+    i=n-1;
+    while(i!=-1) {
+        printf("%i ",v[i]);
+        i--;
+    }
+    
+
+}
+
+/* 5.6. Scrieti un program C/C++ pentru inversarea unui sir de caractere  fara a utiliza memorie suplimentara.*/
+#include <string.h>
+
+void revers(char v[]) {
+    int c= strlen(v)-2;
+    for(int i=c;i>=0;i--) printf("%c",v[i]);
+    
+}
+
+int main() {
+    char text[100];
+    fgets(text,100,stdin);
+    revers(text);
+}
+    
