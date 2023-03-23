@@ -1,0 +1,167 @@
+//LABORATOR 5
+
+/* 5.1 Scrieti un program care demonstreaza ca suma numerelor de la 1 la n este egala cu n(n+1)/2 */
+
+int main()
+{
+    int n = 10;
+    int suma=0;
+    for(int i=0;i<=n;i++) {
+        suma+=i;
+    }
+    
+    float suma2 = n*(n+1)/2;
+    printf("Suma = %i\n",suma);
+    printf("Suma2 = %f",suma2);
+    return 0;
+    
+    //suma de la 1 la 10 e corecta prin ambele formule;
+}
+
+/* 5.2 Scrieti un program care demonstreaza ca suma patratelor numerelor de la 1 la n este egala cu n(n+1)(2n+1)/6 */
+#include <math.h>
+int main()
+{
+    int n = 4;
+    float suma=0;
+    for(int i=0;i<=n;i++) {
+        suma = suma + pow(i,2);
+    }
+    
+    float suma2 = n*(n+1)*(2*n+1)/6;
+    printf("Suma = %f\n",suma);
+    printf("Suma2 = %f",suma2);
+    return 0;
+    
+    //suma patratelor  de la 1 la 4 e corecta prin ambele formule;
+}
+
+
+
+/* 5.3 Scrieti un program care determina divizorii numarului de forma n3+2n, n>0. Dar pentru n5-n */
+#include <math.h>
+int main()
+{
+    int n;
+    scanf("%i",&n);
+    if(n>0) {
+
+    int numar1 = pow(n,3)+2*n;
+    int numar2 = pow(n,5)-n;
+    
+    printf("Divizorii primului numar: ");
+    for(int i=1;i<=numar1;i++) {
+        if(numar1%i==0) printf("%i ",i);
+    }
+    printf("\nDivizorii celui de-al doilea numar: ");
+    
+    
+    for(int i=1;i<=numar2;i++) {
+        if(numar2%i==0) printf("%i ",i);
+    }
+    }
+    else return -1;
+    return 0;
+    
+
+}
+
+/* 5.4 Scrieti un program care calculeaza ab, a si b numere naturale,  prin 2 metode diferite,
+
+a. prima metoda este data de inmultire repetata ( a inmultit de b ori) - complexitate  O(n)
+
+*. b. a doua metoda consta este bazată pe următoarele relații - complexitate O(log n): 
+
+ xn = xn-1 * x, dacă n este impar
+ xn = xn/2 * xn/2 , dacă n este par */
+#include <math.h>
+int main()
+{
+    int a,b;
+    scanf("%i%i",&a,&b);
+    int numar1 = a;
+
+    for(int i=0;i<b-1;i++) {
+        numar1 *= a;
+    }
+    printf("Numar prin a la putera b este : %i\n",numar1);
+    
+    int numar2=a;
+    if(numar2%2!=0) {
+        numar2=pow(numar2,b-1)*numar2;
+    }
+    if(numar2%2==0) {
+        numar2 = pow(numar2,b/2)*(numar2,b/2);
+    }
+    printf("Numar la putere prin a doua metoda e : %i",numar2);
+    return 0;
+    
+
+}
+
+/* 5.5 Scrieti un program care determina elementul minim de pe linia elementului maxim dintr-un vector bidimensional. */
+int main()
+{
+    int n;
+    scanf("%i",&n);
+    int v[n][n];
+    for(int i=0;i<n;i++) {
+        for(int j=0;j<n;j++) {
+            scanf("%i",&v[i][j]);
+        }
+        
+    }
+    for(int i=0;i<n;i++) {
+        for(int j=0;j<n;j++) {
+            printf("%i ",v[i][j]);
+        }
+        printf("\n");
+    }
+    int max = v[0][0];
+    
+    for(int i = 0;i<n;i++) {
+        for(int j = 1;j<n;j++) {
+            if(max<v[i][j]) max = v[i][j];
+            
+        }
+    }
+    int linie;
+    for(int i = 0;i<n;i++) {
+        for(int j = 0;j<n;j++) {
+            if(v[i][j]==max) {
+            linie = i;}
+            
+        }
+    }
+    int min = v[linie][0];
+        for(int j=0;j<n;j++) {
+            if(v[linie][j]<min) min = v[linie][j];
+        }
+    printf("Elementul minim de pe linia cu elementul maxim exte: %i ",min);
+}
+
+/* 5.6 Scrieti un program care inverseaza un numar intreg, dupa care elimina din numarul rezultat cifrele pare, daca exista, fara a inversa numarul. */
+
+int main() {
+    int n, cifra, n_inv = 0, cifre_pare = 0;
+    scanf("%d", &n);
+
+    while (n != 0) {
+        cifra = n % 10; 
+        n_inv = n_inv * 10 + cifra; 
+
+        if (cifra % 2 == 0) {
+            cifre_pare = cifre_pare * 10 + cifra; 
+            n = n /  10; 
+            continue;
+        }
+
+        n /= 10; 
+    }
+
+    printf("Numarul inversat: %d\n", n_inv);
+    printf("Cifrele pare eliminate: %d\n", cifre_pare);
+
+    return 0;
+}
+
